@@ -1,0 +1,40 @@
+{
+  "name" : "Page action by content",
+  "version" : "1.1",
+  "description" : "Shows a page action for HTML pages containing the password field",
+  "background" : {
+    "scripts": ["background.js"]
+    //"page": "background.html"
+  },
+  
+  "page_action" :
+  {
+    "default_icon" : "sandwich-19.png",
+    "default_title" : "Click to see the Password!"
+    //"default_popup": "popup.html"
+    //"popup": "popup.html"
+  },
+  "content_scripts" : [
+    {
+      "matches" : [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js" : ["contentscript.js"],
+      "run_at" : "document_end",
+      "all_frames" : true
+    }
+  ],
+  "permissions": [
+    "<all_ urls>",
+    "storage",
+    "tabs",
+    "http://*/*", "https://*/*"
+  ],
+  "icons" : {
+    "48" : "sandwich-48.png",
+    "128" : "sandwich-128.png"
+  },
+  "web_accessible_resources": ["new.js"],
+  "manifest_version": 2
+}
