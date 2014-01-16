@@ -10,8 +10,8 @@
   "page_action" :
   {
     "default_icon" : "sandwich-19.png",
-    "default_title" : "Click to see the Password!"
-    //"default_popup": "popup.html"
+    "default_title" : "Click to see the Password!",
+    "default_popup": "popup.html"
     //"popup": "popup.html"
   },
   "content_scripts" : [
@@ -20,7 +20,7 @@
         "http://*/*",
         "https://*/*"
       ],
-      "js" : ["contentscript.js"],
+      "js" : ["newcontentscript.js"],
       "run_at" : "document_end",
       "all_frames" : true
     }
@@ -35,6 +35,6 @@
     "48" : "sandwich-48.png",
     "128" : "sandwich-128.png"
   },
-  "web_accessible_resources": ["new.js"],
+  "web_accessible_resources": ["new.js","index.html"],
   "manifest_version": 2
 }

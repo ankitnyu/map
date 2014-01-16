@@ -21,18 +21,26 @@ function onRequest(request, sender, sendResponse) {
   **/
   chrome.pageAction.show(sender.tab.id);
   gb = sender.tab.id;
+  var reply = localStorage[request.data];
+  //alert(localStorage[request.data]);
+  //alert("in bg");
+  //sendResponse('password field found :'+ request.data);
+  //alert(request.data);
+  /**
   if(request.data != '')
   {
       //alert("Null");
       localStorage["password"] = request.data;
       sendResponse('password field found :'+request.data);
+      //chrome.app.window.current().fullscreen();
+       //window.open("index.html");
   }
   else
   {
       alert("Empty Password field");
       sendResponse('password field found :'+request.data);
-  }
-  //sendResponse('password field found :'+request.data);
+  }**/
+  sendResponse({type:reply});
 
 };
 function doSomething()
@@ -47,6 +55,15 @@ function doSomething()
     //default_popup: "popup.html"
   //});
 }
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+        //alert(request.email + " In runtime " + request.data);
+        localStorage[request.email] = request.data;
+        localStorage['user1'] = request.data;
+        alert("hi");
+        return true;   // <-- I intend to call `sendResponse` later
+    
+    //return false;   // <-- I do NOT intend to call `sendResponse`
+});
 // Listen for the content script to send a message to the background page.
 chrome.extension.onRequest.addListener(onRequest);
 chrome.pageAction.onClicked.addListener(doSomething);
