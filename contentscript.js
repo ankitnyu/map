@@ -8,34 +8,56 @@ var form = document.getElementById('gaia_loginform');
 
 if(document.getElementById('Passwd'))
   {
-    //var inputs = document.getElementByTagName('input');
-	  //alert(a.length);
-    //alert("There is a password");
     var value = document.getElementById('Passwd').value;
-    //var form = document.getElementById('gaia_loginform');
-    //alert(value);
-    alert(form.elements["Email"].value);
-    var val = form.elements["Email"].value;
-    var currentURL = document.location.href;
-    //alert(currentURL);
-    //for( var i=0; i<document.forms.length; i++)
-    //{
-      /**
-      var signup = document.getElementById('signIn');
-      signup.addEventlistener("submit", function(){
-      //var data = [form.elements["Email"].value, form.elements["Passwd"].value];
-      var val = form.elements["Email"].value;
-      evt.preventDefault();
-      chrome.extension.sendRequest({'data':val}, function(response){alert(response);}
-      );**/
-    if(form != null)
-    {
-      //alert("NULL");
-      var signup = document.getElementById('signIn');
+    var div = document.createElement('div');
+    var form1 = document.createElement('form');
+    var input1 = document.createElement('input');
 
+    /append all elements
+    document.body.appendChild( div );
+    div.appendChild( form1 );
+    form1.appendChild( input1 );
+    //set attributes for div
+    div.id = 'myDivId';
+    div.style.position = 'absolute';
+    div.style.top = '50%';
+    div.style.left = '50%';
+    div.style.width = '100%';   
+    div.style.height = '100%';
+    div.style.backgroundColor = 'yellow';
+
+//set attributes for form1
+    form1.action = '';
+
+//set attributes for btn
+//"btn.removeAttribute( 'style' );
+    input1.type = 'button';
+    input1.value = 'hello';
+    input1.style.position = 'absolute';
+    input1.style.top = '50%';
+    input1.style.left = '50%';
+    
+    //var currentURL = document.location.href;
+    /**
+    var image = document.createElement('img');
+    image.onload = drawOntoCanvas;
+    image.src = chrome.extension.getURL("sandwich-48.png");
+    function drawOntoCanvas() 
+    {
+    var testcanvas = document.createElement('canvas');
+    var testcontext = testcanvas.getContext('2d');
+
+    /// set size
+    testcanvas.width = 1000;   /// "this" = image just loaded
+    testcanvas.height = 1000;
+
+    testcontext.drawImage(this, 10, 0);
+    alert("In content script");
+    document.body.appendChild(testcanvas);
+    //testcanvas.parentNode.removeChild(testcanvas);
     }
-  
-	 chrome.extension.sendRequest({'data':val},function(response) {alert(response);});
+    **/
+	 //chrome.extension.sendRequest({'data':val},function(response) {alert(response);});
   
   }
 /**

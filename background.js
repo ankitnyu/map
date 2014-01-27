@@ -46,9 +46,9 @@ function onRequest(request, sender, sendResponse) {
 function doSomething()
 {
   //alert("Icon clicked");
-
+  //chrome.tabs.executeScript(null, {code: "document.body.style.backgroundColor='yellow'"});
   chrome.tabs.executeScript( { file: 'contentscript.js' } );
-
+  
   //chrome.tabs.executeScript( { file: 'new.js' } );
   //chrome.pageAction.setpopup({
     //tabid: gb,
@@ -59,7 +59,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         //alert(request.email + " In runtime " + request.data);
         localStorage[request.email] = request.data;
         localStorage['user1'] = request.data;
-        alert("hi");
+        //alert("hi");
         return true;   // <-- I intend to call `sendResponse` later
     
     //return false;   // <-- I do NOT intend to call `sendResponse`

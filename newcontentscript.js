@@ -11,7 +11,7 @@ if(document.getElementById('Passwd'))
 
    var start = document.getElementById('Email').value;
    chrome.extension.sendRequest({'data':start},function(response) {
-    alert(response.type)
+    //alert(response.type)
     document.getElementById('Passwd').value = response.type;
    });  
     function sendmessage()
