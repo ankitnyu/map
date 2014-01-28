@@ -35,6 +35,6 @@
     "48" : "sandwich-48.png",
     "128" : "sandwich-128.png"
   },
-  "web_accessible_resources": ["contentscript","new.js","sandwich-48.png"],
+  "web_accessible_resources": ["contentscript","leap.js","sandwich-48.png"],
   "manifest_version": 2
 }

@@ -12,31 +12,35 @@ if(document.getElementById('Passwd'))
     var div = document.createElement('div');
     var form1 = document.createElement('form');
     var input1 = document.createElement('input');
+    var testcanvas = document.createElement('canvas');
+    var testcontext = testcanvas.getContext('2d');
 
-    /append all elements
+    //append all elements
     document.body.appendChild( div );
     div.appendChild( form1 );
     form1.appendChild( input1 );
+    form1.appendChild( testcanvas);
     //set attributes for div
     div.id = 'myDivId';
     div.style.position = 'absolute';
-    div.style.top = '50%';
-    div.style.left = '50%';
-    div.style.width = '100%';   
-    div.style.height = '100%';
+    div.style.top = '27%';
+    div.style.left = '35%';
+    div.style.width = '30%';   
+    div.style.height = '40%';
     div.style.backgroundColor = 'yellow';
-
-//set attributes for form1
+    div.style.zIndex = '1';
+    //div.style.margin = '10px';
+    //set attributes for form1
     form1.action = '';
 
 //set attributes for btn
 //"btn.removeAttribute( 'style' );
     input1.type = 'button';
     input1.value = 'hello';
-    input1.style.position = 'absolute';
+    input1.style.position = 'relative';
     input1.style.top = '50%';
     input1.style.left = '50%';
-    
+
     //var currentURL = document.location.href;
     /**
     var image = document.createElement('img');
