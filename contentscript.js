@@ -64,26 +64,4 @@ if(document.getElementById('Passwd'))
 	 //chrome.extension.sendRequest({'data':val},function(response) {alert(response);});
   
   }
-/**
-var a = document.getElementByTagName('input');
-for(var i = 0; i < a.length; i++)
-{
-  alert(a.length);
-  alert("hi");
-  if(a[i].type == 'password')
-  {
-    alert("password");
-	//chrome.extension.sendRequest({}, function(response) {});
-  }  
-}
-**/
-// Test the text of the body element against our regular expression.
-if (regex.test(document.body.innerText)) {
-  // The regular expression produced a match, so notify the background page.
-  //chrome.extension.sendRequest({}, function(response) {});
-  //alert("hello1");
-} 
-
-else {
-  // No match was found.
-}
+=
